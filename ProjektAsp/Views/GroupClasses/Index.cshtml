@@ -1,0 +1,33 @@
+@model IEnumerable<ProjektAsp.Models.GroupClass>
+
+@{
+    ViewData["Title"] = "Zajęcia Grupowe";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Zajęcia Grupowe</h2>
+        <a asp-action="Create" class="btn btn-primary">Otwórz nowe zajęcia</a>
+    </div>
+
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.Capacity)</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Capacity)</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-outline-info disabled">Lista Obecności</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
