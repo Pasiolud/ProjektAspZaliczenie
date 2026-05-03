@@ -1,47 +1,49 @@
-﻿@model ProjektAsp.Models.TrainingSession
+@model ProjektAsp.Models.TrainingSession
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edycja Rezerwacji";
 }
 
-<h1>Edit</h1>
-
-<h4>TrainingSession</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="MemberId" class="control-label"></label>
-                <select asp-for="MemberId" class="form-control" asp-items="ViewBag.MemberId"></select>
-                <span asp-validation-for="MemberId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TrainerId" class="control-label"></label>
-                <select asp-for="TrainerId" class="form-control" asp-items="ViewBag.TrainerId"></select>
-                <span asp-validation-for="TrainerId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ScheduledDate" class="control-label"></label>
-                <input asp-for="ScheduledDate" class="form-control" />
-                <span asp-validation-for="ScheduledDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container mt-4">
+    <h2>Edytuj rezerwację</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                
+                <div class="form-group mb-3">
+                    <label asp-for="MemberId" class="control-label fw-bold">Klubowicz</label>
+                    <select asp-for="MemberId" class="form-control" asp-items="ViewBag.MemberId"></select>
+                    <span asp-validation-for="MemberId" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label asp-for="TrainerId" class="control-label fw-bold">Trener</label>
+                    <select asp-for="TrainerId" class="form-control" asp-items="ViewBag.TrainerId"></select>
+                    <span asp-validation-for="TrainerId" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label asp-for="ScheduledDate" class="control-label fw-bold"></label>
+                    <input asp-for="ScheduledDate" type="date" class="form-control" />
+                    <span asp-validation-for="ScheduledDate" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group mb-4">
+                    <label asp-for="Price" class="control-label fw-bold"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Zapisz zmiany" class="btn btn-success" />
+                    <a asp-action="Index" class="btn btn-secondary ms-2">Powrót</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

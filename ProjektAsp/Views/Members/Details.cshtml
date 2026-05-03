@@ -63,7 +63,7 @@
                                         <tr>
                                             <td>@(ts.Trainer?.FirstName + " " + ts.Trainer?.LastName ?? "Nieprzypisany")</td>
                                             <td>@ts.ScheduledDate.ToShortDateString()</td>
-                                            <td class="fw-bold text-success">@ts.Price zł</td>
+                                            <td class="fw-bold text-success">@ts.Price.ToString("F2") zł</td>
                                         </tr>
                                     }
                                 </tbody>

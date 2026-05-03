@@ -48,7 +48,7 @@
                                         <tr>
                                             <td>@(session.Member?.FirstName + " " + session.Member?.LastName ?? "Nieznany")</td>
                                             <td>@session.ScheduledDate.ToString("dd.MM.yyyy HH:mm")</td>
-                                            <td class="text-success fw-bold">@session.Price zł</td>
+                                            <td class="text-success fw-bold">@session.Price.ToString("F2") zł</td>
                                         </tr>
                                     }
                                 </tbody>

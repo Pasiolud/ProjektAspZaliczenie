@@ -30,6 +30,8 @@ namespace ProjektAsp.Models
 
         [Required]
         [Display(Name = "Należność (PLN)")]
+        [Column(TypeName = "decimal(18, 2)")]
+        [DisplayFormat(DataFormatString = "{0:F2}", ApplyFormatInEditMode = true)]
         public decimal Price { get; set; }
     }
 }
