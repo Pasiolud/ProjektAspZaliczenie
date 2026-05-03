@@ -1,4 +1,4 @@
-﻿@model ProjektAsp.Models.TrainingSession
+@model ProjektAsp.Models.TrainingSession
 
 @{
     ViewData["Title"] = "Create";
@@ -9,29 +9,35 @@
 <h4>TrainingSession</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="MemberId" class="control-label"></label>
-                <select asp-for="MemberId" class ="form-control" asp-items="ViewBag.MemberId"></select>
+            
+            <div class="form-group mb-3">
+                <label asp-for="MemberId" class="control-label fw-bold">Wybierz Klubowicza</label>
+                <select asp-for="MemberId" class="form-control" asp-items="ViewBag.MemberId"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="TrainerId" class="control-label"></label>
-                <select asp-for="TrainerId" class ="form-control" asp-items="ViewBag.TrainerId"></select>
+            
+            <div class="form-group mb-3">
+                <label asp-for="TrainerId" class="control-label fw-bold">Wybierz Trenera</label>
+                <select asp-for="TrainerId" class="form-control" asp-items="ViewBag.TrainerId"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="ScheduledDate" class="control-label"></label>
-                <input asp-for="ScheduledDate" class="form-control" />
+            
+            <div class="form-group mb-3">
+                <label asp-for="ScheduledDate" class="control-label fw-bold"></label>
+                <input asp-for="ScheduledDate" type="date" class="form-control" />
                 <span asp-validation-for="ScheduledDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
+            
+            <div class="form-group mb-4">
+                <label asp-for="Price" class="control-label fw-bold"></label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Utwórz Rezerwację" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary ms-2">Powrót do listy</a>
             </div>
         </form>
     </div>

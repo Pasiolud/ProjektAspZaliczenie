@@ -25,6 +25,7 @@ namespace ProjektAsp.Models
 
         [Required]
         [Display(Name = "Data Spotkania")]
+        [DataType(DataType.Date)]
         public DateTime ScheduledDate { get; set; }
 
         [Required]
