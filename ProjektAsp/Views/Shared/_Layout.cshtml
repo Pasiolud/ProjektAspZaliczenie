@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -20,10 +20,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Start</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-primary fw-bold" asp-area="" asp-controller="Members" asp-action="Index">Klubowicze</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success fw-bold" asp-area="" asp-controller="GroupClasses" asp-action="Index">Zajęcia Grupowe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger fw-bold" asp-area="" asp-controller="Trainers" asp-action="Index">Nasi Trenerzy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning text-dark fw-bold" asp-area="" asp-controller="TrainingSessions" asp-action="Index">Rezerwacje (Payload)</a>
                         </li>
                     </ul>
                 </div>

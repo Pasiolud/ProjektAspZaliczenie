@@ -26,7 +26,7 @@
                     <td>@Html.DisplayFor(modelItem => item.LastName)</td>
                     <td>@Html.DisplayFor(modelItem => item.Specialization)</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-outline-info disabled">Przypisz trening</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Profil / Grafik</a>
                     </td>
                 </tr>
             }

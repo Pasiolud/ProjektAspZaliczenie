@@ -1,8 +1,48 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Panel Główny";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mt-5">
+    <h1 class="display-4 fw-bold text-uppercase">Fitness Manager Pro</h1>
+    <p class="lead text-muted mt-3">Zaawansowany system do obsługi relacji w klubie sportowym z wdrożonym rygorem projektowym.</p>
+    <hr class="w-50 mx-auto" />
+</div>
+
+<div class="row mt-5 text-center">
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5 class="card-title text-primary fw-bold">Klubowicze</h5>
+                <p class="card-text small">Zarządzanie rejestrem klientów klubu.</p>
+                <a asp-controller="Members" asp-action="Index" class="btn btn-outline-primary btn-sm">Przejdź &raquo;</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5 class="card-title text-success fw-bold">Zajęcia Grupowe</h5>
+                <p class="card-text small">Relacja (Implicit N:M) dla chętnych.</p>
+                <a asp-controller="GroupClasses" asp-action="Index" class="btn btn-outline-success btn-sm">Przejdź &raquo;</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5 class="card-title text-danger fw-bold">Trenerzy</h5>
+                <p class="card-text small">Ewidencja personelu z podziałem ról.</p>
+                <a asp-controller="Trainers" asp-action="Index" class="btn btn-outline-danger btn-sm">Przejdź &raquo;</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5 class="card-title text-warning fw-bold text-dark">Treningi Personalne</h5>
+                <p class="card-text small">Relacja N:M z Payloadem (Wycena).</p>
+                <a asp-controller="TrainingSessions" asp-action="Index" class="btn btn-outline-warning text-dark btn-sm">Przejdź &raquo;</a>
+            </div>
+        </div>
+    </div>
 </div>

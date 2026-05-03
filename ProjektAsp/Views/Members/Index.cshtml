@@ -24,7 +24,7 @@
                     <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
                     <td>@Html.DisplayFor(modelItem => item.LastName)</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-outline-info disabled">Zapisz na zajęcia</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info text-white">Profil / Szczegóły</a>
                     </td>
                 </tr>
             }

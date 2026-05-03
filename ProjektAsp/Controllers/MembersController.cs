@@ -36,5 +36,20 @@ namespace ProjektAsp.Controllers
             }
             return View(member);
         }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var member = await _context.Members
+                .Include(m => m.GroupClasses)
+                .Include(m => m.TrainingSessions)
+                    .ThenInclude(ts => ts.Trainer)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (member == null) return NotFound();
+
+            return View(member);
+        }
     }
 }
