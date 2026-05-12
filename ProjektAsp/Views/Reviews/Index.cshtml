@@ -1,0 +1,33 @@
+@model IEnumerable<ProjektAsp.Models.Review>
+
+@{
+    ViewData["Title"] = "Opinie";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Opinie o Trenerach</h2>
+        <a asp-action="Create" class="btn btn-primary">Dodaj nową opinię</a>
+    </div>
+
+    <div class="row">
+        @foreach (var item in Model) {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title text-primary fw-bold">Trener: @(item.Trainer?.FirstName + " " + item.Trainer?.LastName)</h5>
+                            <span class="badge bg-warning text-dark fs-6">Ocena: @item.Rating / 5</span>
+                        </div>
+                        <h6 class="card-subtitle mb-2 text-muted">Autor: @(item.Member?.FirstName + " " + item.Member?.LastName)</h6>
+                        <hr />
+                        <p class="card-text fst-italic">"@item.Comment"</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0 text-muted small text-end">
+                        Dodano: @item.CreatedDate.ToShortDateString()
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

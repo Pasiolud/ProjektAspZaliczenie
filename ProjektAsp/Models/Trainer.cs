@@ -28,5 +28,8 @@ namespace ProjektAsp.Models
 
         [Display(Name = "Sesje Treningowe")]
         public virtual ICollection<TrainingSession>? TrainingSessions { get; set; }
+
+        [Display(Name = "Opinie Klientów")]
+        public virtual ICollection<Review>? Reviews { get; set; }
     }
 }

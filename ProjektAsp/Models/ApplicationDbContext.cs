@@ -13,5 +13,6 @@ namespace ProjektAsp.Models
         public DbSet<GroupClass>? GroupClasses { get; set; }
         public DbSet<Trainer>? Trainers { get; set; }
         public DbSet<TrainingSession>? TrainingSessions { get; set; }
+        public DbSet<Review>? Reviews { get; set; }
     }
 }
